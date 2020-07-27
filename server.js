@@ -2,7 +2,7 @@ const express = require("./node_modules/express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 const path = require("path");
 const session = require("express-session");
 const config = require("./config");
@@ -12,6 +12,7 @@ require("dotenv").config();
 
 const Song = require("./models/song");
 const seedSongs = require("./seedsongs.js");
+
 
 // connections
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/song";
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname)));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(pino);
+
 app.use(
   session({
     secret: process.env.SECRET,
