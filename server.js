@@ -39,7 +39,7 @@ app.use(
 );
 
 //cors
-const whitelist = ["http://localhost:3000", "https://carrieokey.herokuapp.com/", "https://carrieokey.herokuapp.com/"]; //need to add heruko link once created
+const whitelist = ["http://localhost:3000", "https://carrieokey.herokuapp.com", "https://carrieokey.herokuapp.com"]; //need to add heruko link once created
 const corsOptions = {
   origin: (origin, callback) => {
     console.log(origin, 'before test')
