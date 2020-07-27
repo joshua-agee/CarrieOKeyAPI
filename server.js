@@ -5,10 +5,14 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3003;
 const path = require("path");
 const session = require("express-session");
+const config = require("./config");
+const pino = require("express-pino-logger")();
+const { chatToken, videoToken, voiceToken } = require("./tokens");
 require("dotenv").config();
 
-const Song = require('./models/song')
-const seedSongs = require('./seedsongs.js')
+const Song = require("./models/song");
+const seedSongs = require("./seedsongs.js");
+
 
 // connections
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/song";
@@ -30,6 +34,8 @@ mongoose.connection.once("open", () => {
 app.use(express.static(path.join(__dirname)));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(pino);
+
 app.use(
   session({
     secret: process.env.SECRET,
@@ -67,15 +73,68 @@ app.use("/song", songController);
 // app.use("/favorite", favoriteController);
 
 //data seed path
-app.get('/seed', (req,res)=>{
-  Song.create(seedSongs, (err, createdSongs)=>{
-    if(err) {
-      res.status(400).json({ error: err.message})
-  }
+app.get("/seed", (req, res) => {
+  Song.create(seedSongs, (err, createdSongs) => {
+    if (err) {
+      res.status(400).json({ error: err.message });
+    }
 
-  res.status(200).send(createdSongs)
-  })
-})
+    res.status(200).send(createdSongs);
+  });
+});
+
+const sendTokenResponse = (token, res) => {
+  res.set("Content-Type", "application/json");
+  res.send(
+    JSON.stringify({
+      token: token.toJwt(),
+    })
+  );
+};
+
+app.get("/api/greeting", (req, res) => {
+  const name = req.query.name || "World";
+  res.setHeader("Content-Type", "application/json");
+  res.send(JSON.stringify({ greeting: `Hello ${name}!` }));
+});
+
+app.get("/chat/token", (req, res) => {
+  const identity = req.query.identity;
+  const token = chatToken(identity, config);
+  sendTokenResponse(token, res);
+});
+
+app.post("/chat/token", (req, res) => {
+  const identity = req.body.identity;
+  const token = chatToken(identity, config);
+  sendTokenResponse(token, res);
+});
+
+app.get("/video/token", (req, res) => {
+  const identity = req.query.identity;
+  const room = req.query.room;
+  const token = videoToken(identity, room, config);
+  sendTokenResponse(token, res);
+});
+
+app.post("/video/token", (req, res) => {
+  const identity = req.body.identity;
+  const room = req.body.room;
+  const token = videoToken(identity, room, config);
+  sendTokenResponse(token, res);
+});
+
+app.get("/voice/token", (req, res) => {
+  const identity = req.body.identity;
+  const token = voiceToken(identity, config);
+  sendTokenResponse(token, res);
+});
+
+app.post("/voice/token", (req, res) => {
+  const identity = req.body.identity;
+  const token = voiceToken(identity, config);
+  sendTokenResponse(token, res);
+});
 
 app.listen(PORT, () => {
   console.log("listening at port", PORT);
