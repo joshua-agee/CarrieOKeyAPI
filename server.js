@@ -48,12 +48,9 @@ app.use(
 const whitelist = ["http://localhost:3000", "https://carrieokey.herokuapp.com", "https://carrieokey.herokuapp.com"]; //need to add heruko link once created
 const corsOptions = {
   origin: (origin, callback) => {
-    console.log(origin, 'before test')
     if (whitelist.indexOf(origin) >= 0) {
       callback(null, true);
-      console.log(origin, "allowed address")
     } else {
-      console.log(origin)
       callback(new Error("Not allowed by CORS"));
     }
   },
