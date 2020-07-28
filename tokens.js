@@ -22,6 +22,7 @@ const chatToken = (identity, config) => {
 };
 
 const videoToken = (identity, room, config) => {
+  // console.log("access video token");
   let videoGrant;
   if (typeof room !== "undefined") {
     videoGrant = new VideoGrant({ room });
