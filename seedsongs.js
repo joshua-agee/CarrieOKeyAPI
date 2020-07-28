@@ -1,5 +1,6 @@
 const songs = [
-    {songName: "The Difference",                                 
+  {
+    songName: "The Difference",
     lyrics: `[Verse 1: Toro y Moi]
     The difference in between
     All the faces you read
@@ -46,10 +47,12 @@ const songs = [
     (Ooooh, ooh-ooh, ooh-ooh, ooh-ooh, ooh
     Ooh-ooh, ooh-ooh, ooh-ooh)`,
     artist: "Flume",
-    videoLink: "",
-    image: "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2Fa6af14b1dc00360f948c869c35c89286.1000x1000x1.jpg"
-    },
-    {songName: "Adventure of a Lifetime",                                  
+    videoLink: "https://www.youtube.com/embed/TRQ54DYjZL8",
+    image:
+      "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2Fa6af14b1dc00360f948c869c35c89286.1000x1000x1.jpg",
+  },
+  {
+    songName: "Adventure of a Lifetime",
     lyrics: `[Intro]
     [Indecipherable]
     
@@ -123,10 +126,12 @@ const songs = [
     (Woo-hoo, woo-hoo)
     (Woo-hoo, woo-hoo)`,
     artist: "Coldplay",
-    videoLink: "",
-    image: "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2Ff93829ec937b934e29a18d20aa60f3c0.1000x1000x1.jpg"
-    },
-    {songName: "Somewhere I Belong",                                  
+    videoLink: "https://www.youtube.com/embed/QtXby3twMmI",
+    image:
+      "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2Ff93829ec937b934e29a18d20aa60f3c0.1000x1000x1.jpg",
+  },
+  {
+    songName: "Somewhere I Belong",
     lyrics: `[Verse 1: Mike Shinoda & (Chester Bennington)]
     (When this began) I had nothing to say
     And I'd get lost in the nothingness inside of me
@@ -190,10 +195,12 @@ const songs = [
     I wanna feel like I'm somewhere I belong
     Somewhere I belong`,
     artist: "Linkin Park",
-    videoLink: "",
-    image: "https://t2.genius.com/unsafe/496x440/https%3A%2F%2Fimages.genius.com%2Fdea614df3874d90b2488f8f6bbc2b666.600x533x1.jpg"
-    },
-    {songName: "I'm Yours",                                  
+    videoLink: "https://www.youtube.com/embed/zsCD5XCu6CM",
+    image:
+      "https://t2.genius.com/unsafe/496x440/https%3A%2F%2Fimages.genius.com%2Fdea614df3874d90b2488f8f6bbc2b666.600x533x1.jpg",
+  },
+  {
+    songName: "I'm Yours",
     lyrics: `[Verse 1]
     Well, you done done me, and you bet I felt it
     I tried to be chill, but you're so hot that I melted
@@ -268,9 +275,11 @@ const songs = [
     You best believe, you best believe I'm yours, hmm`,
     artist: "Jason Mraz",
     videoLink: "",
-    image: "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2F16863c98e58acb83e8a00acbbc91e00e.350x350x1.jpg"
-    },
-    {songName: "Hello",                                  
+    image:
+      "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2F16863c98e58acb83e8a00acbbc91e00e.350x350x1.jpg",
+  },
+  {
+    songName: "Hello",
     lyrics: `[Verse 1]
     Hello, it's me
     I was wondering if after all these years you'd like to meet
@@ -336,9 +345,11 @@ const songs = [
     But it don't matter, it clearly doesn't tear you apart anymore`,
     artist: "Adele",
     videoLink: "",
-    image: "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2F56fe4a76d3a480e425824b2e18a2e983.1000x1000x1.jpg"
-    },
-    {songName: "I Like Me Better",                                  
+    image:
+      "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2F56fe4a76d3a480e425824b2e18a2e983.1000x1000x1.jpg",
+  },
+  {
+    songName: "I Like Me Better",
     lyrics: `[Verse 1]
     To be young and in love in New York City
     To not know who I am but still know that I'm good long as you're here with me
@@ -386,9 +397,11 @@ const songs = [
     I like me better when I'm with you`,
     artist: "Lauv",
     videoLink: "",
-    image: "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2Fe3f74a6d7d146e9ea2b4d8a85154ee5a.640x640x1.jpg"
-    },
-    {songName: "Sunny Days",                                  
+    image:
+      "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2Fe3f74a6d7d146e9ea2b4d8a85154ee5a.640x640x1.jpg",
+  },
+  {
+    songName: "Sunny Days",
     lyrics: `[Verse 1]
     She woke up in the morning
     With the sunrise in her eyes
@@ -449,9 +462,11 @@ const songs = [
     Oh, sunny days`,
     artist: "Armin van Buuren",
     videoLink: "",
-    image: "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2F3c88e0cc5e272794bad09881a55a8671.640x640x1.jpg"
-    },
-    {songName: "Drugs & the Internet",                                  
+    image:
+      "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2F3c88e0cc5e272794bad09881a55a8671.640x640x1.jpg",
+  },
+  {
+    songName: "Drugs & the Internet",
     lyrics: `[Verse 1]
     Another life, another story
     She walked out, said I was boring
@@ -513,10 +528,11 @@ const songs = [
     To be more than I am, I am`,
     artist: "Lauv",
     videoLink: "",
-    image: "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2F42074d90120395721ee21625991c2469.1000x1000x1.jpg"
-    },
-    {
-    songName: "Blu",                                  //need to add more keywords as project progress
+    image:
+      "https://t2.genius.com/unsafe/440x440/https%3A%2F%2Fimages.genius.com%2F42074d90120395721ee21625991c2469.1000x1000x1.jpg",
+  },
+  {
+    songName: "Blu", //need to add more keywords as project progress
     lyrics: `[Verse 1]
     Messing with my pride, thinking anytime
     You could just get up and go
@@ -573,18 +589,16 @@ const songs = [
     Fall into your blue`,
     artist: "Jon Bellion",
     videoLink: "",
-    image: "https://t2.genius.com/unsafe/441x441/https%3A%2F%2Fimages.genius.com%2F9877d0f44b9875a61b68117c4834b171.720x720x1.jpg"   
-    },
-    // {
-    // songName: "",                                  //need to add more keywords as project progress
-    // lyrics: ``,
-    // artist: "",
-    // videoLink: "",
-    // image: ""   
-    // },
+    image:
+      "https://t2.genius.com/unsafe/441x441/https%3A%2F%2Fimages.genius.com%2F9877d0f44b9875a61b68117c4834b171.720x720x1.jpg",
+  },
+  // {
+  // songName: "",                                  //need to add more keywords as project progress
+  // lyrics: ``,
+  // artist: "",
+  // videoLink: "",
+  // image: ""
+  // },
+];
 
-    
-
-]
-
-module.exports = songs
+module.exports = songs;
